@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { environment } from '../../../../environments/environment'
 
 @Component({
   selector: 'hat-core',
@@ -7,7 +6,6 @@ import { environment } from '../../../../environments/environment'
   styleUrls: [ './core-container.component.scss' ]
 })
 export class CoreContainerComponent implements OnInit {
-  public version = environment.version
 
   constructor() { }
 

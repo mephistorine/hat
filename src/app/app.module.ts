@@ -6,7 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme'
 import { NbEvaIconsModule } from '@nebular/eva-icons'
 import { AppRoutingModule } from './app-routing.module'
-import { actions } from './shared/models'
+import { actions } from './shared/models';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { actions } from './shared/models'
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbEvaIconsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     actions
